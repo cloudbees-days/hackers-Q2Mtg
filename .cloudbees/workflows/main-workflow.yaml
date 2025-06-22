@@ -21,7 +21,7 @@ jobs:
           url: https://sda.preview.cb-demos.io/westest/
           username: ${{ secrets.WES_JENKINS_USERNAME }}
           token: ${{ secrets.WES_JENKINS_TOKEN }}
-          job-name: WesTestJob
+          job-name: WesTestJob3
       - name: Run GHA Workflow
         kind: test
         uses: cloudbees-io/ghactions-run-workflow@v2
@@ -29,7 +29,7 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           org-name: cloudbees-days
-          repo-name: hackers-WesTest4Jayraj
+          repo-name: hackers-Q2Mtg
           branch-name: main
           workflow-name: test-and-build-image
           test-type: JUnit
@@ -195,11 +195,11 @@ jobs:
       - name: Register_deployed_artifact
         uses: https://github.com/cloudbees-io/register-deployed-artifact@v1
         with:
-          name: "ldonleycb/hackers-organized"
-          version: "${{ cloudbees.scm.sha }}"
-          url: "${{ secrets.DOCKERHUB_USER }}/hackers-organized:${{ cloudbees.scm.sha }}"
+          name: ldonleycb/hackers-organized
+          version: ${{ cloudbees.scm.sha }}
+          url: ${{ secrets.DOCKERHUB_USER }}/hackers-organized:${{ cloudbees.scm.sha }}
           digest: ""
-          target-environment: "DOW Production"
+          target-environment: DOW Production
     needs:
       - build-container-image
       - scan
