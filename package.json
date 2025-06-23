@@ -42,6 +42,6 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.10",
-    "loader-utils": "^2.0.0"  // Updated from 0.2.17 to mitigate prototype pollution vulnerability.
+    "loader-utils": "^2.0.0"
   }
 }
